@@ -27,3 +27,9 @@ cf-api.protected.json
 *.key
 Thumbs.db
 .DS_Store
+runtime/
+bridge-config.json
+bridge/model-policy.json
+bridge/desktop-context.json
+bridge/.state/
+backups/

@@ -1,0 +1,7 @@
+{
+  "host": "127.0.0.1",
+  "port": 7676,
+  "publicBaseUrl": "https://bridge.example.invalid",
+  "allowedRoots": ["/srv/projects/demo"],
+  "stateDir": "~/.local/share/codex-chatgpt-bridge/state"
+}

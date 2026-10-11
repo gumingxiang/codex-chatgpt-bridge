@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "primary": {"cwd": "/srv/projects/demo", "host": "gpu-server"},
+    "remote": {"cwd": "/srv/projects/secondary", "host": "gpu-server"}
+  },
+  "localAlias": "primary",
+  "transport": "native",
+  "nativeCodex": "/opt/codex/bin/codex",
+  "remoteCodex": "/opt/codex/bin/codex",
+  "sshExecutable": "ssh",
+  "remoteWorkspaceProject": null
+}
