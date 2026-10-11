@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "allowedModels": ["gpt-6.1-sol"],
+  "allowedReasoningEfforts": ["medium", "high", "xhigh"],
+  "defaultModel": "gpt-6.1-sol",
+  "defaultReasoningEffort": "xhigh"
+}

@@ -1,0 +1,16 @@
+[Unit]
+Description=Codex bridge reverse route to an operator-managed HTTPS VPS
+After=network-online.target codex-chatgpt-bridge.service
+Wants=codex-chatgpt-bridge.service
+
+[Service]
+Type=simple
+# bridge-vps is an existing operator SSH Host with pinned known_hosts and a dedicated key.
+ExecStart=/usr/bin/ssh -N -T -o BatchMode=yes -o StrictHostKeyChecking=yes -o UpdateHostKeys=no -o ExitOnForwardFailure=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=3 -o ConnectTimeout=10 -o ConnectionAttempts=1 -R 127.0.0.1:17676:127.0.0.1:7676 bridge-vps
+Restart=always
+RestartSec=3
+TimeoutStopSec=15
+UMask=0077
+
+[Install]
+WantedBy=default.target

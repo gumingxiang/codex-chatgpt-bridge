@@ -1,0 +1,32 @@
+[Unit]
+Description=Codex ChatGPT bridge native MCP
+After=network-online.target
+
+[Service]
+Type=simple
+# Replace project/runtime/Node paths with compatible installed locations.
+WorkingDirectory=/srv/projects/demo
+Environment=DEVSPACE_CONFIG_DIR=%h/.config/codex-chatgpt-bridge
+Environment=DEVSPACE_STATE_DIR=%h/.local/share/codex-chatgpt-bridge/state
+Environment=CODEX_TASK_BRIDGE_CONFIG=%h/.config/codex-chatgpt-bridge/bridge-config.json
+Environment=CODEX_TASK_BRIDGE_MODEL_POLICY=%h/.config/codex-chatgpt-bridge/model-policy.json
+Environment=CODEX_TASK_BRIDGE_STATE_DIR=%h/.local/share/codex-chatgpt-bridge/task-state
+Environment=CODEX_TASK_BRIDGE_TRANSPORT=native
+Environment=DEVSPACE_TOOL_MODE=minimal
+Environment=DEVSPACE_LOG_LEVEL=warn
+Environment=DEVSPACE_LOG_REQUESTS=false
+Environment=DEVSPACE_LOG_TOOL_CALLS=false
+Environment=HTTP_PROXY=
+Environment=HTTPS_PROXY=
+Environment=ALL_PROXY=
+Environment=http_proxy=
+Environment=https_proxy=
+Environment=all_proxy=
+ExecStart=/usr/bin/node %h/.local/share/codex-chatgpt-bridge/runtime/dist/cli.js serve
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=20
+UMask=0077
+
+[Install]
+WantedBy=default.target

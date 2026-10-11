@@ -1,0 +1,13 @@
+{
+  "name": "codex-chatgpt-bridge",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Operator-configured Codex task extension and lifecycle examples for DevSpace",
+  "license": "MIT",
+  "engines": {"node": ">=22.19 <27"},
+  "scripts": {"test": "node --test bridge/task-bridge.test.mjs bridge/task-bridge.policy.test.mjs bridge/task-bridge.native.test.mjs bridge/bridge-config.test.mjs bridge/remote-workspace.test.mjs"},
+  "dependencies": {"ws": "8.21.0"},
+  "peerDependencies": {"@waishnav/devspace": "1.0.8"},
+  "peerDependenciesMeta": {"@waishnav/devspace": {"optional": true}}
+}
